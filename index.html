@@ -6,7 +6,7 @@
     <title>Your Community Clothing Room</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -56,41 +56,54 @@
         </div>
     </section>
 
-    
-
     <section class="section" id="gallery">
         <h2 class="section-title">New Arrivals</h2>
+        
+        <div class="gallery-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="adult">Adults</button>
+            <button class="filter-btn" data-filter="kids">Kids</button>
+        </div>
+
         <div class="gallery-grid">
-            <div class="item-card">
+            <div class="item-card" data-category="adult">
                 <span class="tag">Jacket</span>
-                <img src="https://images.unsplash.com/photo-1551028919-ac66c5f8b955?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Denim Jacket">
+                <img src="https://images.unsplash.com/photo-1542272617-08f086302291?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Denim Jacket">
                 <div class="item-info">
                     <h4>Vintage Denim Jacket</h4>
                     <p>Size M - Condition: 95%</p>
                 </div>
             </div>
-            <div class="item-card">
+            <div class="item-card" data-category="adult">
                 <span class="tag">Dress</span>
-                <img src="https://images.unsplash.com/photo-1596783074918-c84cb06531ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Floral Dress">
+                <img src="https://images.unsplash.com/photo-1596783074918-c84cb06531ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Floral Dress">
                 <div class="item-info">
                     <h4>Summer Floral Dress</h4>
                     <p>Size S - Condition: Like New</p>
                 </div>
             </div>
-            <div class="item-card">
+            <div class="item-card" data-category="adult">
                 <span class="tag">Shirt</span>
-                <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="White Shirt">
+                <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="White Shirt">
                 <div class="item-info">
                     <h4>Classic Oxford Shirt</h4>
                     <p>Size L - Condition: Good</p>
                 </div>
             </div>
-            <div class="item-card">
+            <div class="item-card" data-category="kids">
                 <span class="tag">Kids</span>
-                <img src="https://images.unsplash.com/photo-1519278409-1f56fdda7e01?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Kids Clothes">
+                <img src="https://images.unsplash.com/photo-1519238263496-652d235c638e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Kids Clothes">
                 <div class="item-info">
-                    <h4>Toddler Boy Set</h4>
+                    <h4>Cute Boy Outfit</h4>
                     <p>Age 3-4 - Condition: Very Good</p>
+                </div>
+            </div>
+             <div class="item-card" data-category="kids">
+                <span class="tag">Kids</span>
+                <img src="https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Girl Dress">
+                <div class="item-info">
+                    <h4>Little Princess Dress</h4>
+                    <p>Age 5-6 - Condition: Like New</p>
                 </div>
             </div>
         </div>
@@ -148,10 +161,17 @@
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 Your Community Clothing Room. Designed with YCCR.</p>
+            <p>&copy; 2023 Your Community Clothing Room. Designed with ❤️.</p>
         </div>
     </footer>
 
-    <script src="./script.js"></script>
+    <button id="backToTop" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

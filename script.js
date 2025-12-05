@@ -24,59 +24,99 @@ document.addEventListener('DOMContentLoaded', () => {
     if (donationForm) {
         donationForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            // Get values (Example of how to get data)
             const inputs = donationForm.querySelectorAll('input, select, textarea');
             let isValid = true;
-
-            // Simple validation visualization
             inputs.forEach(input => {
                 if(!input.value) isValid = false;
             });
-
             if(isValid) {
-                // Success Message
-                alert('Thank you for your donation! We will contact you soon to arrange the pickup.');
+                alert('Thank you for your donation! We will contact you soon.');
                 donationForm.reset();
             }
         });
     }
 
-    // 4. Header Background Change on Scroll
+    // 4. Header Effect
     const header = document.querySelector('header');
-    
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-            header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
         } else {
             header.style.backgroundColor = '#ffffff';
-            // Optional: remove shadow when at top if desired
-             header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)'; 
         }
     });
 
-    // 5. Add simple animation to items when they scroll into view (Optional nice-to-have)
-    const observerOptions = {
-        threshold: 0.1
-    };
+    // --- NEW FEATURES START HERE ---
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-            }
+    // 5. Category Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.item-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            items.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.classList.remove('hide');
+                    item.classList.add('show');
+                } else {
+                    item.classList.remove('show');
+                    item.classList.add('hide');
+                }
+            });
         });
-    }, observerOptions);
-
-    const items = document.querySelectorAll('.item-card, .feature-card');
-    items.forEach(item => {
-        // Set initial state for animation
-        item.style.opacity = "0";
-        item.style.transform = "translateY(20px)";
-        item.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
-        observer.observe(item);
     });
 
+    // 6. Lightbox (Modal Image Viewer)
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeLightbox = document.querySelector('.close-lightbox');
+    const galleryImages = document.querySelectorAll('.item-card img');
+
+    galleryImages.forEach(img => {
+        img.addEventListener('click', (e) => {
+            // Prevent event bubbling if needed, but clicking image inside card is fine
+            lightbox.style.display = "block";
+            lightboxImg.src = e.target.src;
+        });
+    });
+
+    if (closeLightbox) {
+        closeLightbox.addEventListener('click', () => {
+            lightbox.style.display = "none";
+        });
+    }
+
+    // Close lightbox when clicking outside the image
+    window.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
+        }
+    });
+
+    // 7. Back To Top Button
+    const backToTopBtn = document.getElementById("backToTop");
+
+    window.addEventListener('scroll', () => {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopBtn.style.display = "block";
+        } else {
+            backToTopBtn.style.display = "none";
+        }
+    });
+
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
