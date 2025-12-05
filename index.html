@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Community Clothing Room</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-shirt"></i> YCCR
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#gallery">Wardrobe</a></li>
+                <li><a href="#contact" class="btn-donate">Donate Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>YOUR COMMUNITY CLOTHING ROOM</h1>
+            <p>Share the love, spread the warmth. Where pre-loved clothes find a new life.</p>
+            <button class="hero-btn" onclick="scrollToElement('gallery')">Explore Now</button>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <h2 class="section-title">Our Mission</h2>
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-recycle"></i>
+                <h3>Sustainability</h3>
+                <p>Reducing fashion waste by effectively reusing and recycling pre-loved clothing.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Community</h3>
+                <p>Connecting kind hearts with those in need of support within our neighborhood.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-heart"></i>
+                <h3>Free for All</h3>
+                <p>All items at the "Clothing Room" are shared completely free of charge.</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="section" id="gallery">
+        <h2 class="section-title">New Arrivals</h2>
+        <div class="gallery-grid">
+            <div class="item-card">
+                <span class="tag">Jacket</span>
+                <img src="https://images.unsplash.com/photo-1551028919-ac66c5f8b955?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Denim Jacket">
+                <div class="item-info">
+                    <h4>Vintage Denim Jacket</h4>
+                    <p>Size M - Condition: 95%</p>
+                </div>
+            </div>
+            <div class="item-card">
+                <span class="tag">Dress</span>
+                <img src="https://images.unsplash.com/photo-1596783074918-c84cb06531ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Floral Dress">
+                <div class="item-info">
+                    <h4>Summer Floral Dress</h4>
+                    <p>Size S - Condition: Like New</p>
+                </div>
+            </div>
+            <div class="item-card">
+                <span class="tag">Shirt</span>
+                <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="White Shirt">
+                <div class="item-info">
+                    <h4>Classic Oxford Shirt</h4>
+                    <p>Size L - Condition: Good</p>
+                </div>
+            </div>
+            <div class="item-card">
+                <span class="tag">Kids</span>
+                <img src="https://images.unsplash.com/photo-1519278409-1f56fdda7e01?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Kids Clothes">
+                <div class="item-info">
+                    <h4>Toddler Boy Set</h4>
+                    <p>Age 3-4 - Condition: Very Good</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section donate-section" id="contact">
+        <h2 class="section-title">Donation Registration</h2>
+        <div class="form-container">
+            <form id="donationForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Your full name" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="Your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label>Clothing Type</label>
+                    <select>
+                        <option>Adult Clothing</option>
+                        <option>Kids Clothing</option>
+                        <option>Accessories (Shoes, Bags...)</option>
+                        <option>Others</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Notes / Pickup Address</label>
+                    <textarea rows="4" placeholder="Enter address or any specific notes..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Donation</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Your Community Clothing Room</h3>
+                <p>Connecting the community through clothing. We believe fashion is about sharing.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>Email: admin@yourcommunityclothingroom.store</p>
+                
+                <p>Address: Roosevelt, Utah, United States</p>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Your Community Clothing Room. Designed with YCCR.</p>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
